@@ -26,12 +26,12 @@ public class C02_byClassName {
 
         searchBox.sendKeys("Nutella" + Keys.ENTER);
 
-        List<WebElement> priceBox = driver.findElements(By.className("a-price-whole"));
+        List<WebElement> prices = driver.findElements(By.className("a-price-whole"));
 
         int maxPrice;
         String strPrice;
         int price = 0;
-        for (WebElement each : priceBox) {
+        for (WebElement each : prices) {
 
             strPrice = each.getText();
             maxPrice = Integer.parseInt(strPrice);
