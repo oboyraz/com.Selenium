@@ -11,13 +11,16 @@ import java.util.List;
 public class C04_automationExercise {
     public static void main(String[] args) throws InterruptedException {
 
+        // create a test class, adjust settings
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
+        // go to www.automationexercise.com page
         driver.get("https://www.automationexercise.com/");
         List<WebElement> linkList = driver.findElements(By.tagName("a"));
 
+        // Test if there are 147 links on the page
         int expectedSize = 147;
         int actualSize = linkList.size();;
         String expectedStr = "Products";
@@ -28,6 +31,7 @@ public class C04_automationExercise {
             System.out.println("Number of links Test FAILED");
         }
 
+        // Click the "Products" link and Test that "special offer" appears
         for (WebElement each: linkList) {
             if (each.getText().contains(expectedStr)){
                 each.click();
