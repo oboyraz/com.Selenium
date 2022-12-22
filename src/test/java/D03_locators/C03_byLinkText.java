@@ -26,7 +26,6 @@ public class C03_byLinkText {
 
         String expectedWord = "Gift Cards";
         String actualWord = driver.getTitle();
-
         if (actualWord.contains(expectedWord)){
             System.out.println("Test PASSED");
         }else{
