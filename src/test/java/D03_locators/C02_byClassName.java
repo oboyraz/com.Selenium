@@ -28,21 +28,21 @@ public class C02_byClassName {
 
         List<WebElement> prices = driver.findElements(By.className("a-price-whole"));
 
-        int maxPrice;
-        String strPrice;
-        int price = 0;
+        int maxPrice = 0;
+        String priceStr;
+        int priceInt;
         for (WebElement each : prices) {
 
-            strPrice = each.getText();
-            maxPrice = Integer.parseInt(strPrice);
+            priceStr = each.getText();
+            priceInt = Integer.parseInt(priceStr);
 
-            if (maxPrice > price) {
-                price = maxPrice;
+            if (priceInt > maxPrice) {
+                maxPrice = priceInt;
             }
 
         }
 
-        System.out.println("Max price on first page >> " + price);
+        System.out.println("Max price on first page >> " + maxPrice);
 
         Thread.sleep(3000);
         driver.close();
