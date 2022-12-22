@@ -39,7 +39,7 @@ public class C04_automationExercise {
                     System.out.println("Special offer Test PASSED");
                     break;
                 }else{
-                    System.out.println("Special offer Test FAILED");
+                    System.out.println("'Special offer' Test FAILED");
                     break;
                 }
             }
