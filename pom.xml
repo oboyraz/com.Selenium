@@ -33,6 +33,7 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -52,8 +53,6 @@
             <artifactId>slf4j-nop</artifactId>
             <version>1.7.30</version>
         </dependency>
-
-
 
     </dependencies>
 
