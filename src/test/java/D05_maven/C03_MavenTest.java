@@ -39,6 +39,5 @@ public class C03_MavenTest {
         Thread.sleep(1500);
         driver.close();
 
-
     }
 }
