@@ -23,4 +23,10 @@ public class C02_fileDownloadTest extends testBase {
 
         assertTrue(Files.exists(Paths.get(filePath)));
     }
+
+    @Test
+    public void test02(){
+        String filePath = System.getProperty("user.home") + "\\OneDrive\\Masaüstü\\scrum.rtf";
+        assertTrue(Files.exists(Paths.get(filePath)));
+    }
 }
