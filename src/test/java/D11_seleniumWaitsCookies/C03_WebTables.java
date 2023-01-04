@@ -36,6 +36,28 @@ public class C03_WebTables extends testBase {
             System.out.println(eachRow.getText());
         }
 
+        List<WebElement> tableColumn = driver.findElements(By.xpath("//*[@id='navFooter']/div[4]/table/tbody/tr[1]/td"));
+
+        Assert.assertEquals(13,tableColumn.size());
+
+        List<WebElement> fifthColumn = driver.findElements(By.xpath("//*[@id='navFooter']/div[4]/table/tbody/tr/td[5]"));
+
+        System.out.println("*".repeat(100));
+        for (WebElement fiftColumnValue:fifthColumn) {
+            System.out.println(fiftColumnValue.getText());
+        }
+
+        System.out.println("*".repeat(100));
+
+        String rowColumnValues = getRowandColumnValue(5,3);
+        System.out.println(rowColumnValues);
         ReusableMethods.delay(3);
+    }
+
+    private String getRowandColumnValue(int row, int column) {
+
+        String rowColumnValue = driver.findElement(By.xpath("//*[@id='navFooter']/div[4]/table/tbody/tr" + "["+row+"]" + "/td" +"["+column+"]" )).getText();
+
+        return rowColumnValue;
     }
 }
