@@ -56,7 +56,7 @@ public class C03_WebTables extends testBase {
 
     private String getRowandColumnValue(int row, int column) {
 
-        String rowColumnValue = driver.findElement(By.xpath("//*[@id='navFooter']/div[4]/table/tbody/tr" + "["+row+"]" + "/td" +"["+column+"]" )).getText();
+        String rowColumnValue = driver.findElement(By.xpath("//tbody/tr["+row+"]/td["+column+"]" )).getText();
 
         return rowColumnValue;
     }
