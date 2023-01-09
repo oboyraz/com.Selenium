@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,5 +41,24 @@ public class ReusableMethods {
         } catch (IOException e) {
 
         }
+    }
+
+    public static void elementSS(WebElement searchResultElement) {
+
+        LocalDateTime ldt = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM_dd_HH-mm_ss");
+        String date = ldt.format(dtf);
+        String filePath = "target/ssPic/elementSS_"+date+".png";
+
+        File elementSS = new File(filePath);
+
+        File tempFile = searchResultElement.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(tempFile,elementSS);
+        } catch (IOException e) {
+
+        }
+
     }
 }
